@@ -1,8 +1,16 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 /**
- * Created by YuexingYin on 10/11/16.
+ * The basic idea is as follows:
+
+ Basically we need to minimize the absolute value of (target – (A[i] + A[j] + A[k]).
+ We follow exactly the same procedure as in 3sum problem by first sorting the whole array and linear scan the rest of the array to find two sum.
+
+ If the sum of the triplet is greater than the target, it is obvious that we need to reduce the sum, so set k = k – 1.
+ Similarly if sum of the triplet is less than the target, then we set j = j + 1,
+ at the same time if we got a sum closer to the target, we keep record of it.
+
+ (copyright @sigmainfy)
  */
 public class ThreeSumClosest {
     public int threeSumClosest(int[] nums, int target) {
